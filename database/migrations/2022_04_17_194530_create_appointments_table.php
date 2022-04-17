@@ -19,7 +19,7 @@ return new class extends Migration
             $table->time('time');
             $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('doctor_id')->constrained('doctors')->cascadeOnDelete()->cascadeOnUpdate();
-            
+            $table->foreignId('animal_id')->constrained('animals')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }
