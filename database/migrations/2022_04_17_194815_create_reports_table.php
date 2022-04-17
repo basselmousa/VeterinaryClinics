@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('recommendation', '2000')->nullable();
             $table->foreignId('animal_id')->constrained('animals')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('doctor_id')->constrained('doctors')->cascadeOnDelete()->cascadeOnUpdate();
-            
             $table->timestamps();
         });
     }
