@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('day');
             $table->time('time');
             $table->decimal('price', 5,2);
+            $table->foreignId('doctor_id')->constrained('doctors')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
