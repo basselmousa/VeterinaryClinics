@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('type');
             $table->string('day');
-            $table->time('time');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->decimal('price', 5,2);
             $table->foreignId('doctor_id')->constrained('doctors')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();

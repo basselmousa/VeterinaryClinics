@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('date');
             $table->time('time');
+            $table->string('status')->default('pending');
             $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('doctor_id')->constrained('doctors')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('animal_id')->constrained('animals')->cascadeOnUpdate()->cascadeOnDelete();
