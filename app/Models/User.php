@@ -42,4 +42,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Animal::class);
     }
+
+    public function appoints()
+    {
+        return $this->belongsToMany(Doctor::class, 'appointments', 'user_id')
+            ->withPivot(['date', 'time', 'animal_id', 'status', 'type'])
+            ->withTimestamps();
+
+    }
+
 }
