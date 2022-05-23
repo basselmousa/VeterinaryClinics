@@ -16,7 +16,7 @@
             <div class="info">
                 <div class="row">
                     <div class="col-md-10">
-                        <a href="{{ 'ss' }}" class="d-block">{{ auth()->user()->full_name }} </a>
+                        <a href="{{ route('user.profile.index') }}" class="d-block">{{ auth()->user()->full_name }} </a>
                     </div>
                     <div class="col-md-2">
                         <i class="fa fa-door-open right mr-3 " style="color:  white; cursor: pointer" onclick="event.preventDefault();
@@ -51,16 +51,16 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Animals
-                            <span class="right badge badge-danger">New</span>
+
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('dashboard.doctor.reports') }}" class="nav-link">
+                    <a href="{{ route('user.doctors.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Doctors
-                            <span class="right badge badge-danger">New</span>
+
                         </p>
                     </a>
                 </li>
@@ -75,31 +75,24 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('user.appointments.clinic') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Pending Appointments</p>
+                                <p>Clinic Appointments</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('user.appointments.home') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Accepted Appointments</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Done Appointments</p>
+                                <p>Home Appointments</p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('user.profile.index') }}" class="nav-link">
                         <i class="nav-icon fa fa-gears"></i>
                         <p>
                             Profile
-
                         </p>
                     </a>
 
