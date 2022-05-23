@@ -60,13 +60,30 @@ Route::group(['prefix' => 'user','middleware' => ['auth:web', \App\Http\Middlewa
     Route::get('dashboard' ,[\App\Http\Controllers\User\DashboardController::class, 'index'])->name('home');
 
     Route::group(['prefix' => 'animals', 'as' => 'animals.'], function (){
-        Route::get('/', [\App\Http\Controllers\User\AnimalsController::class, 'index'])->withoutMiddleware([\App\Http\Middleware\HasAnimal::class])->name('index');
-        Route::post('/', [\App\Http\Controllers\User\AnimalsController::class, 'create'])->withoutMiddleware([\App\Http\Middleware\HasAnimal::class])->name('add');
-        Route::delete('/{animal}', [\App\Http\Controllers\User\AnimalsController::class, 'destroy'])->withoutMiddleware([\App\Http\Middleware\HasAnimal::class])->name('delete');
+        Route::get('/', [\App\Http\Controllers\User\AnimalsController::class, 'index'])->name('index')->withoutMiddleware([\App\Http\Middleware\HasAnimal::class]);
+        Route::post('/', [\App\Http\Controllers\User\AnimalsController::class, 'create'])->name('add')->withoutMiddleware([\App\Http\Middleware\HasAnimal::class]);
+        Route::delete('/{animal}', [\App\Http\Controllers\User\AnimalsController::class, 'destroy'])->name('delete')->withoutMiddleware([\App\Http\Middleware\HasAnimal::class]);
     });
 
     Route::group(['prefix' => 'doctors', 'as' => 'doctors.'], function (){
+        Route::get('/', [\App\Http\Controllers\User\DoctorController::class, 'index'])->name('index');
+        Route::get('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'show_appoint'])->name('showAppoint');
+        Route::post('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'appoint'])->name('appoint');
+    });
+
+    Route::group(['prefix' => 'appointments', 'as' => 'appointments.'], function (){
+        Route::get('/clinic', [\App\Http\Controllers\User\AppointmentsController::class, 'clinic'])->name('clinic');
+        Route::get('/home', [\App\Http\Controllers\User\AppointmentsController::class, 'home'])->name('home');
+        Route::delete('/{appointment}', [\App\Http\Controllers\User\AppointmentsController::class, 'destroy'])->name('delete');
+//        Route::get('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'show_appoint'])->name('showAppoint');
+//        Route::post('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'appoint'])->name('appoint');
+    });
+
+    Route::group(['prefix' => 'profile', 'as' => 'profile.'], function (){
+        Route::get('/', [\App\Http\Controllers\User\ProfileController::class, 'index'])->name('index');
+        Route::put('/', [\App\Http\Controllers\User\ProfileController::class, 'update'])->name('update');
 
     });
+
 });
 
