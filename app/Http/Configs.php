@@ -29,4 +29,8 @@ class Configs
         'Saturday'
     ];
 
+    public static $statuses = [
+        'Pending', 'Accepted', 'Rejected', 'Canceled'
+    ];
+
 }

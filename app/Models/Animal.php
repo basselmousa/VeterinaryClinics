@@ -9,4 +9,10 @@ class Animal extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function report()
+    {
+        return $this->belongsToMany(Doctor::class, 'reports', 'animal_id')
+            ->withPivot(['prescription', 'recommendation'])->withTimestamps();
+    }
 }

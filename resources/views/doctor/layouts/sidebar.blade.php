@@ -66,19 +66,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('dashboard.doctor.appointments.pending') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pending Appointments</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('dashboard.doctor.appointments.doctor-clinic') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Clinic Appointments</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('dashboard.doctor.appointments.doctor-home') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Home Appointments</p>
                             </a>

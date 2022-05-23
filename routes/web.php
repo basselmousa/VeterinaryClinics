@@ -50,6 +50,16 @@ Route::group(['prefix' => 'dashboard','as' => 'dashboard.doctor.','middleware'=>
         Route::post('/', [\App\Http\Controllers\Doctor\Dashboard\DoctorDatesController::class, 'create'])->name('add');
         Route::delete('/{date}', [\App\Http\Controllers\Doctor\Dashboard\DoctorDatesController::class, 'destroy'])->name('delete');
     });
+    Route::group(['prefix' => 'appointments', 'as' => 'appointments.'], function (){
+        Route::get('/clinic', [\App\Http\Controllers\Doctor\Dashboard\AppointmentsController::class, 'clinic'])->name('doctor-clinic');
+        Route::get('/home', [\App\Http\Controllers\Doctor\Dashboard\AppointmentsController::class, 'home'])->name('doctor-home');
+        Route::get('/pending', [\App\Http\Controllers\Doctor\Dashboard\AppointmentsController::class, 'pending'])->name('pending');
+        Route::put('/pending/{appointment}', [\App\Http\Controllers\Doctor\Dashboard\AppointmentsController::class, 'change_appointment_status'])->name('change-status');
+        Route::put('/report/{appointment}', [\App\Http\Controllers\Doctor\Dashboard\AppointmentsController::class, 'write_report'])->name('write-report');
+        Route::delete('/{appointment}', [\App\Http\Controllers\Doctor\Dashboard\AppointmentsController::class, 'destroy'])->name('doctor-delete');
+//        Route::get('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'show_appoint'])->name('showAppoint');
+//        Route::post('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'appoint'])->name('appoint');
+    });
 
 
 });
