@@ -51,7 +51,7 @@ class AuthenticateDoctorController extends Controller
             $this->limiter()->clear($this->throttleKey($request));
             return $request->wantsJson()
                 ? new JsonResponse([], 204)
-                : redirect()->intended(route('dashboard.doctor.home'));
+                : redirect()->intended(route('dashboard.doctor.profile.profile'));
         }
 
         $this->limiter()->hit(
@@ -91,7 +91,7 @@ class AuthenticateDoctorController extends Controller
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)
-            : redirect()->route('dashboard.doctor.home');
+            : redirect()->route('dashboard.doctor.profile.update');
     }
 
     private function create(Request $request)

@@ -23,7 +23,7 @@ class Doctor extends Authenticatable
 
     public function rate()
     {
-        return $this->belongsToMany(User::class, 'rates');
+        return $this->belongsToMany(User::class, 'rates')->withPivot('rate');
     }
 
     public function appoints()
@@ -31,5 +31,11 @@ class Doctor extends Authenticatable
         return $this->belongsToMany(User::class, 'appointments', 'doctor_id')
             ->withPivot(['date', 'time', 'animal_id', 'status', 'type'])
             ->withTimestamps();
+    }
+
+    public function reports()
+    {
+        return $this->belongsToMany(Animal::class, 'reports', 'doctor_id')
+            ->withPivot(['prescription', 'recommendation'])->withTimestamps();
     }
 }

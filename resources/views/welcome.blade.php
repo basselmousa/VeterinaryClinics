@@ -72,30 +72,18 @@
         <div class="carousel-inner" role="listbox">
 
             <!-- Slide 1 -->
-            <div class="carousel-item active" style="background-image: url('{{asset('home/assets/img/slide/slide-1.jpg')}}')">
-                <div class="container">
-                    <h2>Welcome to <span>Veterinary Clinics</span></h2>
-                    <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
-                    <a href="#about" class="btn-get-started scrollto">Read More</a>
-                </div>
+            <div class="carousel-item active" style="background-image: url('{{asset('images/carousel1.jpg')}}')">
+
             </div>
 
             <!-- Slide 2 -->
-            <div class="carousel-item" style="background-image: url('{{asset('home/assets/img/slide/slide-2.jpg')}}')">
-                <div class="container">
-                    <h2>Lorem Ipsum Dolor</h2>
-                    <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
-                    <a href="#about" class="btn-get-started scrollto">Read More</a>
-                </div>
+            <div class="carousel-item" style="background-image: url('{{asset('images/carousel2.jpg')}}')">
+
             </div>
 
             <!-- Slide 3 -->
-            <div class="carousel-item" style="background-image: url('{{asset('home/assets/img/slide/slide-3.jpg')}}')">
-                <div class="container">
-                    <h2>Sequi ea ut et est quaerat</h2>
-                    <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
-                    <a href="#about" class="btn-get-started scrollto">Read More</a>
-                </div>
+            <div class="carousel-item" style="background-image: url('{{asset('images/carousel4.jpg')}}');width: 100%">
+
             </div>
 
         </div>
@@ -113,47 +101,6 @@
 
 <main id="main">
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="fas fa-heartbeat"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="fas fa-pills"></i></div>
-                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon"><i class="fas fa-thermometer"></i></div>
-                        <h4 class="title"><a href="">Magni Dolores</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon"><i class="fas fa-dna"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Featured Services Section -->
 
     <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
@@ -174,29 +121,28 @@
 
             <div class="section-title">
                 <h2>About Us</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>The Pet Clinic is a web application that includes all pet doctors in the Hashemite Kingdom of Jordan and allows the
+                    user to follow treatment and book appointments for the specialist doctor for his pet within the area in which he is
+                    located. Pet, if available, and see your vet's reports on each pet.
+                    As for doctors, the application allows them to expand their work by making the clinic’s location available to
+                    residents of the area near the clinic, or by providing a home examination service.</p>
             </div>
 
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <img src="{{asset('home/assets/img/about.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset('images/image.jpg')}}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
+                    <h3>Medical equipment specialized for dealing with animals of all kinds</h3>
+                    <p class="fst-italic">Doctors who specialize in dealing with animals of all kinds and using the latest medical methods
                     </p>
                     <ul>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                    </ul>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
+                        <li><i class="bi bi-check-circle"></i> Modern medical methods to ensure comprehensive medical care for your animal
+                        </li>
+                        <li><i class="bi bi-check-circle"></i> Comprehensive medical control to avoid the largest proportion of errors
+                            .</li>
+                            </ul>
+
                 </div>
             </div>
 
@@ -212,37 +158,36 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                         <i class="fas fa-user-md"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="{{ $all_doctors }}" data-purecounter-duration="1" class="purecounter"></span>
+
+                        <p><strong>Doctors</strong> </p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                        <i class="fa fa-dog"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="{{ $all_animals }}" data-purecounter-duration="1" class="purecounter"></span>
+                        <p><strong>Total animals treated medically</strong></p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                        <i class="fas fa-tasks"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="{{ $all_appointments }}" data-purecounter-duration="1" class="purecounter"></span>
+                        <p><strong>Appointments</strong> </p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                        <i class="fas fa-user-md" style="color: #0b2e13 "></i>
                         <span data-purecounter-start="0" data-purecounter-end="{{ count($doctors) }}" data-purecounter-duration="1" class="purecounter"></span>
-
-                        <p><strong>Doctors</strong> consequuntur quae qui deca rode</p>
-                        <a href="#">Find out more &raquo;</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="far fa-hospital"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>Departments</strong> adipisci atque cum quia aut numquam delectus</p>
-                        <a href="#">Find out more &raquo;</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-flask"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>Research Lab</strong> aut commodi quaerat. Aliquam ratione</p>
-                        <a href="#">Find out more &raquo;</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-award"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>Awards</strong> rerum asperiores dolor molestiae doloribu</p>
-                        <a href="#">Find out more &raquo;</a>
+                        <p><strong>Top Doctors</strong> </p>
                     </div>
                 </div>
 
@@ -269,12 +214,7 @@
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
                                 <img src="{{asset('storage/'.$doctor->image)}}" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+
                             </div>
                             <div class="member-info">
                                 <h4>{{ $doctor->full_name }}</h4>
@@ -304,14 +244,30 @@
 
             <div class="gallery-slider swiper">
                 <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><a class="gallery-lightbox" href="{{asset('home/assets/img/gallery/gallery-1.jpg')}}"><img src="{{asset('home/assets/img/gallery/gallery-1.jpg')}}" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="gallery-lightbox" href="{{asset('home/assets/img/gallery/gallery-2.jpg')}}"><img src="{{asset('home/assets/img/gallery/gallery-2.jpg')}}" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="gallery-lightbox" href="{{asset('home/assets/img/gallery/gallery-3.jpg')}}"><img src="{{asset('home/assets/img/gallery/gallery-3.jpg')}}" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="gallery-lightbox" href="{{asset('home/assets/img/gallery/gallery-4.jpg')}}"><img src="{{asset('home/assets/img/gallery/gallery-4.jpg')}}" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="gallery-lightbox" href="{{asset('home/assets/img/gallery/gallery-5.jpg')}}"><img src="{{asset('home/assets/img/gallery/gallery-5.jpg')}}" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="gallery-lightbox" href="{{asset('home/assets/img/gallery/gallery-6.jpg')}}"><img src="{{asset('home/assets/img/gallery/gallery-6.jpg')}}" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="gallery-lightbox" href="{{asset('home/assets/img/gallery/gallery-7.jpg')}}"><img src="{{asset('home/assets/img/gallery/gallery-7.jpg')}}" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="gallery-lightbox" href="{{asset('home/assets/img/gallery/gallery-8.jpg')}}"><img src="{{asset('home/assets/img/gallery/gallery-8.jpg')}}" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide">
+                        <a class="gallery-lightbox" href="{{asset('images/download.jfif')}}">
+                            <img src="{{asset('images/download.jfif')}}" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide">
+                        <a class="gallery-lightbox" href="{{asset('images/download (1).jfif')}}">
+                            <img src="{{asset('images/download (1).jfif')}}" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide">
+                        <a class="gallery-lightbox" href="{{asset('images/download (2).jfif')}}">
+                            <img src="{{asset('images/download (2).jfif')}}" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide">
+                        <a class="gallery-lightbox" href="{{asset('images/download (3).jfif')}}">
+                            <img src="{{asset('images/download (3).jfif')}}" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide">
+                        <a class="gallery-lightbox" href="{{asset('images/download (4).jfif')}}">
+                            <img src="{{asset('images/download (4).jfif')}}" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide">
+                        <a class="gallery-lightbox" href="{{asset('images/download (5).jfif')}}">
+                            <img src="{{asset('images/download (5).jfif')}}" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide">
+                        <a class="gallery-lightbox" href="{{asset('images/download (6).jfif')}}">
+                            <img src="{{asset('images/download (6).jfif')}}" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide">
+                        <a class="gallery-lightbox" href="{{asset('images/download (7).jfif')}}">
+                            <img src="{{asset('images/download (7).jfif')}}" class="img-fluid" alt=""></a></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>

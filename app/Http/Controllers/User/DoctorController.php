@@ -40,23 +40,29 @@ class DoctorController extends Controller
 
 
         $times  = $doctor->dates()->where('day', Carbon::make($request->date)->getTranslatedDayName())
-            ->where('type', '=', 'Clinic')
+            ->where('type', '=', $request->type)
             ->get(['start_time', 'end_time'])->values()->toArray();
 
 //        dd($times[0]['start_time'], $times[0]['end_time']);
-        $request->validate([
-            'time' => 'required|after_or_equal:'.$times[0]['start_time'] . '|before_or_equal:'. $times[0]['end_time'],
-        ]);
-        auth()->user()->appoints()->attach(auth()->id(), [
-            'doctor_id' => $doctor->id,
-            'animal_id' => $request->animal,
-            'date' => Carbon::make($request->date),
-            'time' => Carbon::make($request->time)->toTimeString(),
-            'type' => $request->type,
-        ]);
+//        dd(count($times));
+        if (count($times) > 0) {
+            $request->validate([
+                'time' => 'required|after_or_equal:'.$times[0]['start_time'] . '|before_or_equal:'. $times[0]['end_time'],
+            ]);
+            auth()->user()->appoints()->attach(auth()->id(), [
+                'doctor_id' => $doctor->id,
+                'animal_id' => $request->animal,
+                'date' => Carbon::make($request->date),
+                'time' => Carbon::make($request->time)->toTimeString(),
+                'type' => $request->type,
+            ]);
 
-        return  redirect()->route('user.doctors.index')->with('success', 'Appointed');
 
+            return redirect()->route('user.doctors.index')->with('success', 'Appointed');
+        }
+        throw \Illuminate\Validation\ValidationException::withMessages([
+            'date' => 'Please choose date tht doctor work\'s on'
+        ]);
 
     }
 }

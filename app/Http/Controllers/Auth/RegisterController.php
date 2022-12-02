@@ -105,7 +105,7 @@ class RegisterController extends Controller
     {
 
         if ($request->hasFile('image')){
-            return $request->file('image')->store('doctors/'. $request->full_name . '/');
+            return $request->file('image')->store('users/'. $request->full_name . '/');
         }
         return null;
     }

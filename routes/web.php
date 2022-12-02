@@ -30,7 +30,7 @@ Route::group(['prefix' => 'doctor','as' => 'doctors.'], function (){
 });
 
 Route::group(['prefix' => 'dashboard','as' => 'dashboard.doctor.','middleware'=> ['auth:doctor',\App\Http\Middleware\IsDoctorHasCertifications::class]],function (){
-    Route::get('/',[\App\Http\Controllers\Doctor\Dashboard\HomeController::class, 'index'])->name('home');
+//    Route::get('/',[\App\Http\Controllers\Doctor\Dashboard\HomeController::class, 'index'])->name('home');
     Route::get('/reports',[\App\Http\Controllers\Doctor\Dashboard\ReportsController::class, 'index'])->name('reports');
     Route::group(['prefix' => 'profile' , 'as' => 'profile.'],function (){
         Route::get('/profile',[\App\Http\Controllers\Doctor\Auth\ProfileController::class, 'index'])->name('profile');
@@ -84,6 +84,7 @@ Route::group(['prefix' => 'user','middleware' => ['auth:web', \App\Http\Middlewa
     Route::group(['prefix' => 'appointments', 'as' => 'appointments.'], function (){
         Route::get('/clinic', [\App\Http\Controllers\User\AppointmentsController::class, 'clinic'])->name('clinic');
         Route::get('/home', [\App\Http\Controllers\User\AppointmentsController::class, 'home'])->name('home');
+        Route::post('/rate/{doctor}', [\App\Http\Controllers\User\AppointmentsController::class, 'rate'])->name('rate');
         Route::delete('/{appointment}', [\App\Http\Controllers\User\AppointmentsController::class, 'destroy'])->name('delete');
 //        Route::get('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'show_appoint'])->name('showAppoint');
 //        Route::post('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'appoint'])->name('appoint');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
 class AppointmentsController extends Controller
@@ -32,6 +33,16 @@ class AppointmentsController extends Controller
 //        $appoints = auth()->user()->appoints()->where('type', '=', 'Clinic')->get();
 //        dd($appoints);
         return view('user.appointments.index', compact('appoints'));
+    }
+
+    public function rate(Request $request, Doctor $doctor)
+    {
+
+        $doctor->rate()->attach($doctor->id,[
+            'rate' => $request->rate,
+            'user_id' => auth()->id()
+        ]);
+        return back();
     }
 
     public function destroy(Request $request, Appointment $appointment)

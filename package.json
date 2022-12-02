@@ -22,5 +22,11 @@
         "vue": "^2.6.12",
         "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "postcss-custom-properties": "^12.1.8",
+        "postcss-hexrgba": "^2.0.1",
+        "postcss-selector-namespace": "^3.0.1",
+        "star-rating.js": "^4.2.3"
     }
 }

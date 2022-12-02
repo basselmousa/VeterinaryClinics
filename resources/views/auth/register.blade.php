@@ -131,6 +131,11 @@
                                     </span>
                     @enderror
                 </div>
+                <!-- /.col -->
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #00aaaa">Register</button>
+                </div>
+                <!-- /.col -->
                 <div class="input-group mb-3">
                     <input type="text" name="phone_number" value="{{ old('phone_number') }}" class="form-control" placeholder="Phone Number">
                     <div class="input-group-append">

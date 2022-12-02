@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Doctor\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Report;
 use Illuminate\Http\Request;
 
 class ReportsController extends Controller
@@ -11,6 +12,11 @@ class ReportsController extends Controller
 
     public function index()
     {
-        return '33';
+
+        $reports = Report::with(['animal', 'doctor'])->where('doctor_id', auth()->id())->get();
+
+
+        return view('doctor.reports.index', compact('reports'));
+
     }
 }
