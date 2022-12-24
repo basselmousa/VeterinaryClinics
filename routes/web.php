@@ -28,7 +28,20 @@ Route::group(['prefix' => 'doctor','as' => 'doctors.'], function (){
     Route::post('register' , [\App\Http\Controllers\Doctor\Auth\AuthenticateDoctorController::class, 'submitRegisterForm'])->name('submitRegisterForm');
     Route::post('logout' , [\App\Http\Controllers\Doctor\Auth\AuthenticateDoctorController::class, 'logout'])->name('logout');
 });
-
+Route::group(['prefix' => 'secretary','as' => 'secretary.'], function (){
+    Route::get('login' , [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'showLoginForm'])->name('showLoginForm');
+    Route::post('login' , [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'submitLoginForm'])->name('submitLoginForm');
+    Route::group(['prefix' => 'appointments', 'as' => 'appointments.'], function (){
+        Route::get('/clinic', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'clinic'])->name('doctor-clinic');
+        Route::get('/home', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'home'])->name('doctor-home');
+        Route::get('/pending', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'pending'])->name('pending');
+        Route::put('/pending/{appointment}', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'change_appointment_status'])->name('change-status');
+        Route::put('/report/{appointment}', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'write_report'])->name('write-report');
+        Route::delete('/{appointment}', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'destroyAppointment'])->name('doctor-delete');
+//        Route::get('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'show_appoint'])->name('showAppoint');
+//        Route::post('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'appoint'])->name('appoint');
+    });
+});
 Route::group(['prefix' => 'dashboard','as' => 'dashboard.doctor.','middleware'=> ['auth:doctor',\App\Http\Middleware\IsDoctorHasCertifications::class]],function (){
 //    Route::get('/',[\App\Http\Controllers\Doctor\Dashboard\HomeController::class, 'index'])->name('home');
     Route::get('/reports',[\App\Http\Controllers\Doctor\Dashboard\ReportsController::class, 'index'])->name('reports');
@@ -59,6 +72,12 @@ Route::group(['prefix' => 'dashboard','as' => 'dashboard.doctor.','middleware'=>
         Route::delete('/{appointment}', [\App\Http\Controllers\Doctor\Dashboard\AppointmentsController::class, 'destroy'])->name('doctor-delete');
 //        Route::get('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'show_appoint'])->name('showAppoint');
 //        Route::post('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'appoint'])->name('appoint');
+    });
+    Route::group(['prefix' => 'secretary','as' => 'secretary.'],function (){
+        Route::get('/', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'index'])->name('index');
+        Route::post('/', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'create'])->name('add');
+        Route::put('/{secretary}', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'update'])->name('update');
+        Route::delete('/{secretary}', [\App\Http\Controllers\Doctor\Dashboard\DoctorSecretaryController::class, 'destroy'])->name('delete');
     });
 
 
