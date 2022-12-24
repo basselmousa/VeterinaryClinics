@@ -22,7 +22,8 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <img src="{{ asset('admin/images/logo.png') }}">
+        <img width="280" src="{{ asset('admin/images/petLogo.png') }}">
+
     </div>
 
     <div class="card">
@@ -132,9 +133,7 @@
                     @enderror
                 </div>
                 <!-- /.col -->
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #00aaaa">Register</button>
-                </div>
+
                 <!-- /.col -->
                 <div class="input-group mb-3">
                     <input type="text" name="phone_number" value="{{ old('phone_number') }}" class="form-control" placeholder="Phone Number">

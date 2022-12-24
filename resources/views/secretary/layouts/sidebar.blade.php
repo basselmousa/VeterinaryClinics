@@ -11,12 +11,13 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('storage/'.auth('doctor')->user()->image) }}" class="img-circle elevation-2" alt="User Image">
+{{--                <img src="{{ asset('storage/'.auth('doctor')->user()->image) }}" class="img-circle elevation-2" alt="User Image">--}}
             </div>
             <div class="info">
                 <div class="row">
                     <div class="col-md-10">
-                        <a href="{{ route('dashboard.doctor.profile.profile') }}" class="d-block">{{ auth('doctor')->user()->full_name }} </a>
+{{--                        {{ route('dashboard.doctor.profile.profile') }}--}}
+                        <a href="#" class="d-block">{{ auth('secretary')->user()->full_name }} </a>
                     </div>
                     <div class="col-md-2">
                         <i class="fa fa-door-open right mr-3 " style="color:  white; cursor: pointer" onclick="event.preventDefault();
@@ -46,15 +47,15 @@
 {{--                        </p>--}}
 {{--                    </a>--}}
 {{--                </li>--}}
-                <li class="nav-item">
-                    <a href="{{ route('dashboard.doctor.reports') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Reports
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a href="{{ route('dashboard.doctor.reports') }}" class="nav-link">--}}
+{{--                        <i class="nav-icon fas fa-th"></i>--}}
+{{--                        <p>--}}
+{{--                            Reports--}}
+{{--                            <span class="right badge badge-danger">New</span>--}}
+{{--                        </p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -65,20 +66,20 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="{{ route('dashboard.doctor.appointments.pending') }}" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Pending Appointments</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
                         <li class="nav-item">
-                            <a href="{{ route('dashboard.doctor.appointments.doctor-clinic') }}" class="nav-link">
+                            <a href="{{ route('secretary.appointments.pending') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pending Appointments</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('secretary.appointments.doctor-clinic') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Clinic Appointments</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('dashboard.doctor.appointments.doctor-home') }}" class="nav-link">
+                            <a href="{{ route('secretary.appointments.doctor-home') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Home Appointments</p>
                             </a>
@@ -86,34 +87,34 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-gears"></i>
-                        <p>
-                            Settings
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('dashboard.doctor.dates.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dates</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('dashboard.doctor.certificates.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Certificates</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('dashboard.doctor.secretary.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Secretaries</p>
-                            </a>
-                        </li>
+{{--                    <a href="#" class="nav-link">--}}
+{{--                        <i class="nav-icon fa fa-gears"></i>--}}
+{{--                        <p>--}}
+{{--                            Settings--}}
+{{--                            <i class="fas fa-angle-left right"></i>--}}
+{{--                        </p>--}}
+{{--                    </a>--}}
+{{--                    <ul class="nav nav-treeview">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{ route('dashboard.doctor.dates.index') }}" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Dates</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{ route('dashboard.doctor.certificates.index') }}" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Certificates</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{ route('dashboard.doctor.secretary.index') }}" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Secretaries</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
 
-                    </ul>
+{{--                    </ul>--}}
                 </li>
 
             </ul>

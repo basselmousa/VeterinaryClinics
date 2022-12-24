@@ -22,7 +22,8 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <img src="{{ asset('admin/images/logo.png') }}">
+        <img width="280" src="{{ asset('admin/images/petLogo.png') }}">
+{{--        <img src="{{ asset('admin/images/logo.png') }}">--}}
     </div>
 
     <div class="card">
