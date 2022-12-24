@@ -38,10 +38,4 @@ class Doctor extends Authenticatable
         return $this->belongsToMany(Animal::class, 'reports', 'doctor_id')
             ->withPivot(['prescription', 'recommendation'])->withTimestamps();
     }
-
-    public function secretary()
-    {
-        return $this->hasMany(Secretary::class);
-    }
-
 }

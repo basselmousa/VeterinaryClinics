@@ -65,12 +65,12 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="{{ route('dashboard.doctor.appointments.pending') }}" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Pending Appointments</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                        <li class="nav-item">
+                            <a href="{{ route('dashboard.doctor.appointments.pending') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pending Appointments</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route('dashboard.doctor.appointments.doctor-clinic') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -104,12 +104,6 @@
                             <a href="{{ route('dashboard.doctor.certificates.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Certificates</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('dashboard.doctor.secretary.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Secretaries</p>
                             </a>
                         </li>
 

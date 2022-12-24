@@ -29,8 +29,7 @@ class DoctorCertificatesController extends Controller
         auth('doctor')->user()->certifications()->create([
             'title' => $request->title,
             'take_date' => Carbon::make($request->take_date),
-            'image' => $this->certificate_image_upload($request),
-
+            'image' => $this->certificate_image_upload($request)
         ]);
         return redirect()->route('dashboard.doctor.certificates.index');
 

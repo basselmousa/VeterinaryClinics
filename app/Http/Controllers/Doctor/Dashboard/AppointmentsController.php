@@ -11,7 +11,7 @@ class AppointmentsController extends Controller
     public function clinic()
     {
         $appoints = Appointment::with('user','doctor', 'animal')
-            ->where('doctor_id', auth('doctor')->user()->id)
+            ->where('doctor_id', auth('doctor')->id())
             ->where('type', '=', 'Clinic')
             ->where('status', '=', 'Accepted')
             ->get();
@@ -23,7 +23,7 @@ class AppointmentsController extends Controller
     public function home()
     {
         $appoints = Appointment::with('user','doctor', 'animal')
-            ->where('doctor_id', auth('doctor')->user()->id)
+            ->where('doctor_id', auth('doctor')->id())
             ->where('type', '=', 'Home')
             ->get();
 
@@ -33,7 +33,7 @@ class AppointmentsController extends Controller
     public function pending()
     {
         $appoints = Appointment::with('user','doctor', 'animal')
-            ->where('doctor_id', auth('doctor')->user()->id)
+            ->where('doctor_id', auth('doctor')->id())
             ->where('status', '=', 'pending')
             ->get();
 
@@ -50,7 +50,7 @@ class AppointmentsController extends Controller
             'status' => $request->status
         ]);
 
-        return redirect()->route('secretary.appointments.pending');
+        return redirect()->route('dashboard.doctor.appointments.pending');
 
     }
 
