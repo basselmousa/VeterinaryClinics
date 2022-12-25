@@ -13,7 +13,7 @@ class ReportsController extends Controller
     public function index()
     {
 
-        $reports = Report::with(['animal', 'doctor'])->where('doctor_id', auth()->id())->get();
+        $reports = Report::with(['animal', 'doctor'])->where('doctor_id', auth("doctor")->id())->get();
 
 
         return view('doctor.reports.index', compact('reports'));

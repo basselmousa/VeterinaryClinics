@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Animal;
+use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
@@ -58,6 +59,17 @@ class AnimalsController extends Controller
             return redirect()->route('user.animals.index');
         }
         abort(401);
+
+    }
+
+
+    public function reports()
+    {
+        $animal_ids = Animal::where("user_id", auth()->id())->get('id');
+        $reports = Report::with(['animal', 'doctor'])->whereIn('animal_id', $animal_ids)->get();
+
+//dd($reports);
+        return view('user.animal.reports', compact('reports'));
 
     }
 }

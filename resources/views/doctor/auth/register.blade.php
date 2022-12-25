@@ -23,7 +23,7 @@
 <div class="register-box">
     <div class="register-logo">
 
-        <img width="280" src="{{ asset('admin/images/petLogo.png') }}">
+        <img width="280" src="{{ asset('admin/images/petLogo.jpeg') }}">
     </div>
 
     <div class="card">

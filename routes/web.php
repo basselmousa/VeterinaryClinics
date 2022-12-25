@@ -87,6 +87,7 @@ Route::group(['prefix' => 'dashboard','as' => 'dashboard.doctor.','middleware'=>
 Route::group(['prefix' => 'user','middleware' => ['auth:web', \App\Http\Middleware\HasAnimal::class],'as' => 'user.'], function (){
 
     Route::get('dashboard' ,[\App\Http\Controllers\User\DashboardController::class, 'index'])->name('home');
+    Route::get('report' ,[\App\Http\Controllers\User\AnimalsController::class, 'reports'])->name('reports');
 
     Route::group(['prefix' => 'animals', 'as' => 'animals.'], function (){
         Route::get('/', [\App\Http\Controllers\User\AnimalsController::class, 'index'])->name('index')->withoutMiddleware([\App\Http\Middleware\HasAnimal::class]);

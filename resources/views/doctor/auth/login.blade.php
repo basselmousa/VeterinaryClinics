@@ -23,11 +23,11 @@
 <div class="login-box">
     <div class="login-logo">
 
-        <img width="280" src="{{ asset('admin/images/petLogo.png') }}">
+        <img width="280" src="{{ asset('admin/images/petLogo.jpeg') }}">
     </div>
     <!-- /.login-logo -->
     <div class="card">
-        <div class="card-body login-card-body">
+        <div class="card-body login-card-body" >
 
 
             <form action="{{ route('doctors.submitLoginForm') }}" method="post">

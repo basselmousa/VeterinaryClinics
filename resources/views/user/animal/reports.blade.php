@@ -1,4 +1,4 @@
-@extends('doctor.layouts.app')
+@extends('layouts.app')
 @section('content')
     <div class="card">
         <div class="card-header">
@@ -15,9 +15,8 @@
                     <th>Animal Name</th>
                     <th>Recommendation</th>
                     <th>Prescription</th>
+                    <th>Doctor Name</th>
                     <th>Date</th>
-
-
                 </tr>
                 </thead>
                 <tbody>
@@ -27,6 +26,7 @@
                         <td>{{ $report->animal->name }}</td>
                         <td>{{ $report->recommendation }}</td>
                         <td>{{ $report->prescription }}</td>
+                        <td>{{ $report->doctor->full_name  }}</td>
                         <td>{{ \Carbon\Carbon::make($report->created_at)->toDateTimeString() }}</td>
 
                     </tr>

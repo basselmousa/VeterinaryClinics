@@ -12914,7 +12914,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 [class*="sidebar-dark-"] .sidebar a {
-  color: #c2c7d0;
+  color: #343a40;
 }
 
 [class*="sidebar-dark-"] .sidebar a:hover, [class*="sidebar-dark-"] .sidebar a:focus {
