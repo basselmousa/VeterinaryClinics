@@ -19,7 +19,7 @@
                         <a href="{{ route('dashboard.doctor.profile.profile') }}" class="d-block">{{ auth('doctor')->user()->full_name }} </a>
                     </div>
                     <div class="col-md-2">
-                        <i class="fa fa-door-open right mr-3 " style="color:  white; cursor: pointer" onclick="event.preventDefault();
+                        <i class="fa fa-door-open right mr-3 " style="color:  white; cursor: pointer" onclick=" event.preventDefault();
                            document.getElementById('logout-form').submit()"></i>
 
                         <form id="logout-form" action="{{ route('doctors.logout') }}" method="post" class="d-none">

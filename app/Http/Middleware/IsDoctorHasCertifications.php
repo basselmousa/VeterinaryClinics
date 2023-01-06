@@ -20,9 +20,9 @@ class IsDoctorHasCertifications
     {
 //        ddd(count(auth('doctor')->user()->certifications));
        if (auth('doctor')->user() != null){
-           if (count(auth('doctor')->user()->certifications) == 0){
-
-               return redirect()->route('dashboard.doctor.certificates.index');
+           if (count(auth('doctor')->user()->certifications) == 0 or !auth('doctor')->user()->active){
+               $message = count(auth('doctor')->user()->certifications) == 0 ? "Please Insert Some Certificates" : "Please Wait For Admin To Activate You";
+               return redirect()->route('dashboard.doctor.certificates.index')->with("success" ,$message);
            }
            return $next($request);
        }

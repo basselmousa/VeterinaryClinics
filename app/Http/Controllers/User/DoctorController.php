@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Nette\Schema\ValidationException;
+use PhpParser\Comment\Doc;
 
 class DoctorController extends Controller
 {
@@ -15,7 +16,8 @@ class DoctorController extends Controller
 
     public function index()
     {
-        $doctors = Doctor::with('certifications')->paginate(15);
+        $doctors = Doctor::with('certifications')->where("active", "=",true)->paginate(15);
+//        dd($doctors);
         $nearestDoctors = Doctor::with('certifications')->where('city', '=', auth()->user()->city)->paginate(15, '*', 'nearest');
         return view('user.doctors.index', compact('doctors', 'nearestDoctors'));
     }
@@ -64,5 +66,15 @@ class DoctorController extends Controller
             'date' => 'Please choose date tht doctor work\'s on'
         ]);
 
+    }
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            "search" => "required"
+        ]);
+        $nearestDoctors = Doctor::with('certifications')->where("active", "=", true)->where("full_name", "like", "%". $request->search ."%" )->where('city', '=', auth()->user()->city)->paginate(15, '*', 'nearest');
+        $doctors = Doctor::with('certifications')->where("full_name", "like", "%". $request->search ."%" )->paginate(15);
+        return view('user.doctors.search', compact('doctors', 'nearestDoctors'));
     }
 }

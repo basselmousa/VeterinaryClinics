@@ -21,12 +21,19 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+//        dd($guards);
         foreach ($guards as $guard) {
             if ($guard == 'web' && Auth::guard($guard)->check()  ) {
                 return redirect(RouteServiceProvider::HOME);
             }
             else if ($guard == 'doctor' && Auth::guard($guard)->check()  ) {
                 return redirect()->route('dashboard.doctor.profile.profile');
+            }
+            else if ($guard == 'secretary' && Auth::guard($guard)->check()  ) {
+                return redirect()->route('dashboard.doctor.profile.profile');
+            }
+            else if ($guard == 'admin' && Auth::guard($guard)->check()  ) {
+                return redirect()->route('admins.doctor');
             }
         }
 

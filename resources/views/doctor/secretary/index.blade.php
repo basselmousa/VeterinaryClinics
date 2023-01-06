@@ -7,7 +7,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-md-10">
-                    <h3 class="card-title">Dates Table</h3>
+                    <h3 class="card-title">Secretaries Table</h3>
                 </div>
                 <div class="col-md-2">
                     <button data-toggle="modal" data-target="#add-date-modal"

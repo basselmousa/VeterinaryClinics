@@ -49,6 +49,10 @@ return [
             'driver' => 'session',
             'provider' => 'secretaries',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
     ],
 
     /*
@@ -80,6 +84,10 @@ return [
         'secretaries' => [
             'driver' => 'eloquent',
             'model' => App\Models\Secretary::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
 
         // 'users' => [

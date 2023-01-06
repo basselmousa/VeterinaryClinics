@@ -83,7 +83,23 @@ Route::group(['prefix' => 'dashboard','as' => 'dashboard.doctor.','middleware'=>
 
 });
 
+Route::group(['prefix' => 'admin','as' => 'admins.'], function (){
+    Route::get('login' , [\App\Http\Controllers\Admin\AdminController::class, 'showLoginForm'])->name('showLoginForm');
+    Route::post('login' , [\App\Http\Controllers\Admin\AdminController::class, 'submitLoginForm'])->name('submitLoginForm');
+    Route::post('logout' , [\App\Http\Controllers\Admin\AdminController::class, 'logout'])->name('logout');
 
+});
+
+Route::group(['prefix' => 'admin','as' => 'admins.'], function (){
+    Route::get('activeDoctors' , [\App\Http\Controllers\Admin\AdminController::class, 'showActiveDoctors'])->name('active');
+    Route::post('activeDoctors/{doctor}' , [\App\Http\Controllers\Admin\AdminController::class, 'deActivateDoctors'])->name('deActivate');
+    Route::delete('activeDoctors/{doctor}' , [\App\Http\Controllers\Admin\AdminController::class, 'deleteDoctor'])->name('deleteActive');
+
+    Route::get('pendingDoctors' , [\App\Http\Controllers\Admin\AdminController::class, 'showPendingDoctors'])->name('pending');
+    Route::post('pendingDoctors/{doctor}' , [\App\Http\Controllers\Admin\AdminController::class, 'activateDoctor'])->name('activate');
+    Route::delete('pendingDoctors/doctor' , [\App\Http\Controllers\Admin\AdminController::class, 'deleteDoctor'])->name('delete');
+
+});
 Route::group(['prefix' => 'user','middleware' => ['auth:web', \App\Http\Middleware\HasAnimal::class],'as' => 'user.'], function (){
 
     Route::get('dashboard' ,[\App\Http\Controllers\User\DashboardController::class, 'index'])->name('home');
@@ -97,6 +113,7 @@ Route::group(['prefix' => 'user','middleware' => ['auth:web', \App\Http\Middlewa
 
     Route::group(['prefix' => 'doctors', 'as' => 'doctors.'], function (){
         Route::get('/', [\App\Http\Controllers\User\DoctorController::class, 'index'])->name('index');
+        Route::post('/search', [\App\Http\Controllers\User\DoctorController::class, 'search'])->name('search');
         Route::get('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'show_appoint'])->name('showAppoint');
         Route::post('/{doctor}', [\App\Http\Controllers\User\DoctorController::class, 'appoint'])->name('appoint');
     });
@@ -115,6 +132,7 @@ Route::group(['prefix' => 'user','middleware' => ['auth:web', \App\Http\Middlewa
         Route::put('/', [\App\Http\Controllers\User\ProfileController::class, 'update'])->name('update');
 
     });
+
 
 });
 

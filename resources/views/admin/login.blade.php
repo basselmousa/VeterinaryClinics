@@ -22,14 +22,15 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
+
         <img width="280" src="{{ asset('admin/images/petLogo.jpeg') }}">
     </div>
     <!-- /.login-logo -->
     <div class="card">
-        <div class="card-body login-card-body">
+        <div class="card-body login-card-body" >
 
 
-            <form action="{{ route('login') }}" method="post">
+            <form action="{{ route('admins.submitLoginForm') }}" method="post">
                 @csrf
                 <div class="input-group mb-3">
                     <input type="email" name="email" class="form-control" placeholder="Email">
@@ -70,11 +71,11 @@
 
 
 
-            {{--            <p class="mb-1">--}}
-            {{--                <a href="forgot-password.html">I forgot my password</a>--}}
-            {{--            </p>--}}
+{{--            <p class="mb-1">--}}
+{{--                <a href="forgot-password.html">I forgot my password</a>--}}
+{{--            </p>--}}
             <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
+                <a href="{{ route('doctors.showRegisterForm') }}" class="text-center">Register a new membership</a>
             </p>
         </div>
         <!-- /.login-card-body -->
