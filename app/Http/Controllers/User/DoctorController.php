@@ -18,7 +18,7 @@ class DoctorController extends Controller
     {
         $doctors = Doctor::with('certifications')->where("active", "=",true)->paginate(15);
 //        dd($doctors);
-        $nearestDoctors = Doctor::with('certifications')->where('city', '=', auth()->user()->city)->paginate(15, '*', 'nearest');
+        $nearestDoctors = Doctor::with('certifications')->where("active", "=",true)->where('city', '=', auth()->user()->city)->paginate(15, '*', 'nearest');
         return view('user.doctors.index', compact('doctors', 'nearestDoctors'));
     }
 
