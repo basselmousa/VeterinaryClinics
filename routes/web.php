@@ -12,8 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/sss', function () {
 
+
+
+    dd(\Carbon\Carbon::make("Wednesday")->getTranslatedShortDayName());
+    dd(\Carbon\Carbon::getDays()[\Carbon\Carbon::make("Wednesday")->toDayDateTimeString()]);
+});
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
+Route::get('/aboutUs', [\App\Http\Controllers\HomeController::class, 'aboutUs'])->name('aboutUs');
+Route::post('/search', [\App\Http\Controllers\HomeController::class, 'search'])->name('search');
 Route::get('/animals', function () {
     return view('animal.home');
 });

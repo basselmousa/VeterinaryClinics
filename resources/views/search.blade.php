@@ -30,11 +30,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
-    <style>
-        .invalid-feedback{
-            display: block;
-        }
-    </style>
+
     <!-- =======================================================
     * Template Name: Veterinary Clinics - v4.7.0
     * Template URL: https://bootstrapmade.com/Veterinary Clinics-free-bootstrap-theme/
@@ -55,31 +51,12 @@
         <!-- Uncomment below if you prefer to use an image logo -->
 
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <nav id="navbar" class="navbar order-last order-lg-0">
-            <ul>
-                {{--                <li><a class="nav-link scrollto " href="#hero">Home</a></li>--}}
-                <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
-                <li><a class="nav-link scrollto" href="{{ route('aboutUs') }}">About</a></li>
-            </ul>
+{{--            <ul>--}}
+{{--                --}}{{--                <li><a class="nav-link scrollto " href="#hero">Home</a></li>--}}
+{{--                <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>--}}
+{{--                <li><a class="nav-link scrollto" href="{{ route('aboutUs') }}">About</a></li>--}}
+{{--            </ul>--}}
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
@@ -144,14 +121,7 @@
                 <form action="{{route("search")}}" method="post">
                     <div class="row">
                         @csrf
-                        <div class="col-md-8 col-lg-8">
-                            <input type="text" class="form-control" name="words" >
-                            @error('words')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
-                        </div>
+                        <div class="col-md-8 col-lg-8"><input type="email" class="form-control" name="email"></div>
                         <div class="col-md-4 col-lg-4"><button type="submit" class="btn btn-info" > Search</button></div>
                     </div>
                 </form>
@@ -168,13 +138,9 @@
 
             <div class="section-title">
                 <h2>Doctors</h2>
-                <p>It takes great pains to benefit.
-                    His needs result from something that actually drives him away.
-                    Let them be what they want. Anyone whom anyone desires.
-                    And no one who hinders receives the others.
-                    Because he should flee in this office of convenience,
-                    which is here.
-                    </p>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    fugiat sit in iste officiis commodi quidem hic quas.</p>
             </div>
 
             <div class="row">
@@ -212,7 +178,7 @@
         </div>
     </section><!-- End Doctors Section -->
 
-    <!-- ======= Gallery Section ======= -->
+{{--    <!-- ======= Gallery Section ======= -->--}}
 {{--    <section id="gallery" class="gallery">--}}
 {{--        <div class="container" data-aos="fade-up">--}}
 
