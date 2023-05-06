@@ -8,7 +8,7 @@
     <title>Pet Grooming</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--}}
+    {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--}}
     <!-- Favicons -->
     <link href="{{asset('home/assets/img/favicon.png')}}" rel="icon">
     <link href="{{asset('home/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
@@ -52,11 +52,11 @@
 
 
         <nav id="navbar" class="navbar order-last order-lg-0">
-{{--            <ul>--}}
-{{--                --}}{{--                <li><a class="nav-link scrollto " href="#hero">Home</a></li>--}}
-{{--                <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>--}}
-{{--                <li><a class="nav-link scrollto" href="{{ route('aboutUs') }}">About</a></li>--}}
-{{--            </ul>--}}
+            {{--            <ul>--}}
+            {{--                --}}{{--                <li><a class="nav-link scrollto " href="#hero">Home</a></li>--}}
+            {{--                <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>--}}
+            {{--                <li><a class="nav-link scrollto" href="{{ route('aboutUs') }}">About</a></li>--}}
+            {{--            </ul>--}}
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
@@ -114,17 +114,19 @@
                 <p>But the pain in the film is irure to condemn, in pleasure it wants to escape from the pain of being
                     cillum in pain, no result. They are the exceptions the blinds yearn for, they do not see, they are
                     the ones who abandon their responsibilities to the fault that is soothing the soul's hardships.</p>
-{{--                <a class="cta-btn scrollto" href="{{ route('login') }}">You Want To Make an Make an Appointment ? Login--}}
-{{--                    In Now </a>--}}
+                {{--                <a class="cta-btn scrollto" href="{{ route('login') }}">You Want To Make an Make an Appointment ? Login--}}
+                {{--                    In Now </a>--}}
             </div>
 
-                <form action="{{route("search")}}" method="post">
-                    <div class="row">
-                        @csrf
-                        <div class="col-md-8 col-lg-8"><input type="email" class="form-control" name="email"></div>
-                        <div class="col-md-4 col-lg-4"><button type="submit" class="btn btn-info" > Search</button></div>
+            <form action="{{route("search")}}" method="post">
+                <div class="row">
+                    @csrf
+                    <div class="col-md-8 col-lg-8"><input type="email" class="form-control" name="email"></div>
+                    <div class="col-md-4 col-lg-4">
+                        <button type="submit" class="btn btn-info"> Search</button>
                     </div>
-                </form>
+                </div>
+            </form>
 
         </div>
     </section><!-- End Cta Section -->
@@ -147,8 +149,8 @@
 
                 @foreach($doctors as $doctor)
 
-                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                            <a href="{{route("user.doctors.showAppoint", $doctor->id)}}">
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <a href="{{route("user.doctors.showAppoint", $doctor->id)}}">
                             <div class="member" data-aos="fade-up" data-aos-delay="100">
                                 <div class="member-img">
                                     <img src="{{asset('storage/'.$doctor->image)}}" class="img-fluid" alt="">
@@ -157,6 +159,9 @@
                                 <div class="member-info">
                                     <h4>{{ $doctor->full_name }}</h4>
                                     <h4>{{ $doctor->full_name }} Clinic</h4>
+                                    <span>{{ $doctor->phone_number }}</span>
+                                    <span>{{ $doctor->country }}  - {{ $doctor->city }} -{{ $doctor->building_number }}  </span>
+
                                     @foreach($doctor->dates as $date)
                                         <span>{{ $date->type }} - {{ \Carbon\Carbon::make($date->day)->getTranslatedShortDayName() }} - ({{ $date->start_time }} - {{ $date->end_time }})</span>
 
@@ -167,8 +172,8 @@
                                     @endforeach
                                 </div>
                             </div>
-                            </a>
-                        </div>
+                        </a>
+                    </div>
 
                 @endforeach
 
@@ -178,49 +183,49 @@
         </div>
     </section><!-- End Doctors Section -->
 
-{{--    <!-- ======= Gallery Section ======= -->--}}
-{{--    <section id="gallery" class="gallery">--}}
-{{--        <div class="container" data-aos="fade-up">--}}
+    {{--    <!-- ======= Gallery Section ======= -->--}}
+    {{--    <section id="gallery" class="gallery">--}}
+    {{--        <div class="container" data-aos="fade-up">--}}
 
-{{--            <div class="section-title">--}}
-{{--                <h2>Gallery</h2>--}}
-{{--                <p>He suffers great pains. The consequences of his avoidance had to do with some. May they be the main--}}
-{{--                    game. No one had any desire. And no one who hinders receives them otherwise. It is because he shuns--}}
-{{--                    the services which he's been in the advantage of.</p>--}}
-{{--            </div>--}}
+    {{--            <div class="section-title">--}}
+    {{--                <h2>Gallery</h2>--}}
+    {{--                <p>He suffers great pains. The consequences of his avoidance had to do with some. May they be the main--}}
+    {{--                    game. No one had any desire. And no one who hinders receives them otherwise. It is because he shuns--}}
+    {{--                    the services which he's been in the advantage of.</p>--}}
+    {{--            </div>--}}
 
-{{--            <div class="gallery-slider swiper">--}}
-{{--                <div class="swiper-wrapper align-items-center">--}}
-{{--                    <div class="swiper-slide">--}}
-{{--                        <a class="gallery-lightbox" href="{{asset('images/download.jfif')}}">--}}
-{{--                            <img src="{{asset('images/download.jfif')}}" class="img-fluid" alt=""></a></div>--}}
-{{--                    <div class="swiper-slide">--}}
-{{--                        <a class="gallery-lightbox" href="{{asset('images/download (1).jfif')}}">--}}
-{{--                            <img src="{{asset('images/download (1).jfif')}}" class="img-fluid" alt=""></a></div>--}}
-{{--                    <div class="swiper-slide">--}}
-{{--                        <a class="gallery-lightbox" href="{{asset('images/download (2).jfif')}}">--}}
-{{--                            <img src="{{asset('images/download (2).jfif')}}" class="img-fluid" alt=""></a></div>--}}
-{{--                    <div class="swiper-slide">--}}
-{{--                        <a class="gallery-lightbox" href="{{asset('images/download (3).jfif')}}">--}}
-{{--                            <img src="{{asset('images/download (3).jfif')}}" class="img-fluid" alt=""></a></div>--}}
-{{--                    <div class="swiper-slide">--}}
-{{--                        <a class="gallery-lightbox" href="{{asset('images/download (4).jfif')}}">--}}
-{{--                            <img src="{{asset('images/download (4).jfif')}}" class="img-fluid" alt=""></a></div>--}}
-{{--                    <div class="swiper-slide">--}}
-{{--                        <a class="gallery-lightbox" href="{{asset('images/download (5).jfif')}}">--}}
-{{--                            <img src="{{asset('images/download (5).jfif')}}" class="img-fluid" alt=""></a></div>--}}
-{{--                    <div class="swiper-slide">--}}
-{{--                        <a class="gallery-lightbox" href="{{asset('images/download (6).jfif')}}">--}}
-{{--                            <img src="{{asset('images/download (6).jfif')}}" class="img-fluid" alt=""></a></div>--}}
-{{--                    <div class="swiper-slide">--}}
-{{--                        <a class="gallery-lightbox" href="{{asset('images/download (7).jfif')}}">--}}
-{{--                            <img src="{{asset('images/download (7).jfif')}}" class="img-fluid" alt=""></a></div>--}}
-{{--                </div>--}}
-{{--                <div class="swiper-pagination"></div>--}}
-{{--            </div>--}}
+    {{--            <div class="gallery-slider swiper">--}}
+    {{--                <div class="swiper-wrapper align-items-center">--}}
+    {{--                    <div class="swiper-slide">--}}
+    {{--                        <a class="gallery-lightbox" href="{{asset('images/download.jfif')}}">--}}
+    {{--                            <img src="{{asset('images/download.jfif')}}" class="img-fluid" alt=""></a></div>--}}
+    {{--                    <div class="swiper-slide">--}}
+    {{--                        <a class="gallery-lightbox" href="{{asset('images/download (1).jfif')}}">--}}
+    {{--                            <img src="{{asset('images/download (1).jfif')}}" class="img-fluid" alt=""></a></div>--}}
+    {{--                    <div class="swiper-slide">--}}
+    {{--                        <a class="gallery-lightbox" href="{{asset('images/download (2).jfif')}}">--}}
+    {{--                            <img src="{{asset('images/download (2).jfif')}}" class="img-fluid" alt=""></a></div>--}}
+    {{--                    <div class="swiper-slide">--}}
+    {{--                        <a class="gallery-lightbox" href="{{asset('images/download (3).jfif')}}">--}}
+    {{--                            <img src="{{asset('images/download (3).jfif')}}" class="img-fluid" alt=""></a></div>--}}
+    {{--                    <div class="swiper-slide">--}}
+    {{--                        <a class="gallery-lightbox" href="{{asset('images/download (4).jfif')}}">--}}
+    {{--                            <img src="{{asset('images/download (4).jfif')}}" class="img-fluid" alt=""></a></div>--}}
+    {{--                    <div class="swiper-slide">--}}
+    {{--                        <a class="gallery-lightbox" href="{{asset('images/download (5).jfif')}}">--}}
+    {{--                            <img src="{{asset('images/download (5).jfif')}}" class="img-fluid" alt=""></a></div>--}}
+    {{--                    <div class="swiper-slide">--}}
+    {{--                        <a class="gallery-lightbox" href="{{asset('images/download (6).jfif')}}">--}}
+    {{--                            <img src="{{asset('images/download (6).jfif')}}" class="img-fluid" alt=""></a></div>--}}
+    {{--                    <div class="swiper-slide">--}}
+    {{--                        <a class="gallery-lightbox" href="{{asset('images/download (7).jfif')}}">--}}
+    {{--                            <img src="{{asset('images/download (7).jfif')}}" class="img-fluid" alt=""></a></div>--}}
+    {{--                </div>--}}
+    {{--                <div class="swiper-pagination"></div>--}}
+    {{--            </div>--}}
 
-{{--        </div>--}}
-{{--    </section><!-- End Gallery Section -->--}}
+    {{--        </div>--}}
+    {{--    </section><!-- End Gallery Section -->--}}
 
 
 </main><!-- End #main -->

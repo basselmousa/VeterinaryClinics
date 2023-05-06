@@ -12,7 +12,8 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Animal Name</th>
+                    <th>Animal Owner Name</th>
+                    <th>Animal Type</th>
                     <th>Recommendation</th>
                     <th>Prescription</th>
                     <th>Date</th>
@@ -25,6 +26,7 @@
                 @foreach($reports as $report)
                     <tr>
                         <td>{{ $report->animal->name }}</td>
+                        <td>{{ $report->animal->type }}</td>
                         <td>{{ $report->recommendation }}</td>
                         <td>{{ $report->prescription }}</td>
                         <td>{{ \Carbon\Carbon::make($report->created_at)->toDateTimeString() }}</td>

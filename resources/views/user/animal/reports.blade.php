@@ -12,7 +12,7 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Animal Name</th>
+                    <th>AnimalType</th>
                     <th>Recommendation</th>
                     <th>Prescription</th>
                     <th>Doctor Name</th>
@@ -23,7 +23,7 @@
 
                 @foreach($reports as $report)
                     <tr>
-                        <td>{{ $report->animal->name }}</td>
+                        <td>{{ $report->animal->type }}</td>
                         <td>{{ $report->recommendation }}</td>
                         <td>{{ $report->prescription }}</td>
                         <td>{{ $report->doctor->full_name  }}</td>

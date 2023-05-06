@@ -18,7 +18,7 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Owner Name</th>
                     <th>Birth Date</th>
                     <th>File Number</th>
                     <th>Animal ID</th>
@@ -93,7 +93,7 @@
                         @csrf
                         <div class="input-group mb-3">
                             <input type="text" name="name" value="{{ old('name') }}" class="form-control"
-                                   placeholder="Full name">
+                                   placeholder="Owner name">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>

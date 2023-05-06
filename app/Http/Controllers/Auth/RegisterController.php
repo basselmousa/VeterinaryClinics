@@ -76,7 +76,7 @@ class RegisterController extends Controller
             'city' => 'required|not_in:0',
             'gender' => 'required|not_in:0',
             'ssn' => 'required',
-            'phone_number' => 'required|unique:doctors|min:10|max:10',
+            'phone_number' => 'required|unique:users|min:10|max:10',
             'image' => 'nullable|mimes:jpg,jpeg,png|max:10000'
         ]);
     }

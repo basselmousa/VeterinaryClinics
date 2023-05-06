@@ -23,7 +23,7 @@
                 <tr>
                     <th>Appoint Date</th>
                     <th>Doctor Name</th>
-                    <th>Animal Name</th>
+                    <th>Animal Type</th>
                     <th>Appoint Time</th>
                     <th>Appoint Status</th>
                     <th>Type</th>
@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{ $appoint->date }}</td>
                         <td>{{ $appoint->doctor->full_name }}</td>
-                        <td>{{ $appoint->animal->name }}</td>
+                        <td>{{ $appoint->animal->type }}</td>
                         <td>{{ $appoint->time }}</td>
                         <td>{{ $appoint->status }}</td>
                         <td>{{ $appoint->type }}</td>

@@ -14,7 +14,7 @@
                 <tr>
                     <th>Appoint Date</th>
                     <th>Doctor Name</th>
-                    <th>Animal Name</th>
+                    <th>Animal Owner Name</th>
                     <th>Appoint Time</th>
                     <th>Appoint Status</th>
                     <th>Type</th>

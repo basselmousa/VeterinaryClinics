@@ -58,7 +58,7 @@
                         <option  selected disabled="">Select Animal</option>
 
                         @foreach(auth()->user()->animals as $animal)
-                            <option value="{{ $animal->id }}" {{ old('animal')   == $animal->id ? 'selected' : '' }} > {{$animal->name}}</option>
+                            <option value="{{ $animal->id }}" {{ old('animal')   == $animal->id ? 'selected' : '' }} > {{$animal->type}}</option>
 
                         @endforeach
 

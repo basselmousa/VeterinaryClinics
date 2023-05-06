@@ -103,24 +103,24 @@
             </div>
 
             <!-- Slide 2 -->
-            <div class="carousel-item" style="background-image: url('{{asset('images/carousel2.jpg')}}')">
+{{--            <div class="carousel-item" style="background-image: url('{{asset('images/carousel2.jpg')}}')">--}}
 
-            </div>
+{{--            </div>--}}
 
-            <!-- Slide 3 -->
-            <div class="carousel-item" style="background-image: url('{{asset('images/carousel4.jpg')}}');width: 100%">
+{{--            <!-- Slide 3 -->--}}
+{{--            <div class="carousel-item" style="background-image: url('{{asset('images/carousel4.jpg')}}');width: 100%">--}}
 
-            </div>
+{{--            </div>--}}
 
         </div>
 
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
+{{--        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">--}}
+{{--            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>--}}
+{{--        </a>--}}
 
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
+{{--        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">--}}
+{{--            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>--}}
+{{--        </a>--}}
 
     </div>
 </section><!-- End Hero -->
@@ -191,6 +191,8 @@
                                 <div class="member-info">
                                     <h4>{{ $doctor->full_name }}</h4>
                                     <h4>{{ $doctor->full_name }} Clinic</h4>
+                                    <span>{{ $doctor->phone_number }}</span>
+                                    <span>{{ $doctor->country }}  - {{ $doctor->city }} -{{ $doctor->building_number }}  </span>
                                     @foreach($doctor->dates as $date)
                                         <span>{{ $date->type }} - {{ \Carbon\Carbon::make($date->day)->getTranslatedShortDayName() }} - ({{ $date->start_time }} - {{ $date->end_time }})</span>
 
